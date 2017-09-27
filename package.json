@@ -1,0 +1,41 @@
+{
+  "name": "randam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NyaYean/randam.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NyaYean/randam/issues"
+  },
+  "homepage": "https://github.com/NyaYean/randam#readme",
+  "dependencies": {
+    "angular-route": "^1.4.3",
+    "bcrypt": "^0.8.3",
+    "body-parser": "^1.13.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "express-session": "^1.11.3",
+    "jquery": "^2.1.4",
+    "lodash": "^4.17.4",
+    "logger": "0.0.1",
+    "morgan": "^1.6.1",
+    "path": "^0.11.14",
+    "pg": "^4.4.0",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.58.0",
+    "sequelize": "^3.3.0",
+    "sequelize-cli": "^1.7.0",
+    "yelp-fusion": "^1.0.3"
+  },
+  "devDependencies": {
+    "webpack": "2.6.1"
+  }
+}
