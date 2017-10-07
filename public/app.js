@@ -1,15 +1,20 @@
-// ReactDOM.render(
-//   <h1>Hello, world!</h1>,
-//   document.getElementById('root')
-// );
+$(function(){
+	console.log("Reloaded")
 
-function component () {
-  var element = document.createElement('div');
+	$('body').on('click','#search', search)
 
-  /* lodash is required for the next line to work */
-  element.innerHTML = _.join(['Hello','webpack'], ' ');
+});
 
-  return element;
+var search = function(){
+	var location = $('#location').val()
+	var typeFood = $('#typeFood').val()
+
+	$.ajax({
+		url: '/search',
+		method: 'GET'
+	})
+	.done(console.log(data))
+	
+
+
 }
-
-document.body.appendChild(component());
