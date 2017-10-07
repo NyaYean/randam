@@ -5,33 +5,32 @@ const express = require("express"),
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
 
-// environment.load();
-
-// var token = yelp.accessToken(clientId, clientSecret).then(response => {
-//   console.log(response.jsonBody.access_token);
-// }).catch(e => {
-//   console.log(e);
-// });
-
-
 
 var yelpRouter = express.Router();
 
+var mainBusiness = [];
+
 yelpRouter.get("/", function(req, res){
-		yelp.accessToken(clientId, clientSecret).then(response => {
+
+			yelp.accessToken(clientId, clientSecret).then(response => {
 				  const client = yelp.client(response.jsonBody.access_token);
-				  
 				  client.search({
 				    term:'American',
 				    location: 'Lower East Side, NY'
 				  }).then(response => {
-				    res.send(response.jsonBody.businesses);
-				    
+				  	
+				  	for (var i=0; i <= 2; i++){
+								mainBusiness.push(response.jsonBody.businesses[i])
+				  	}
+				    res.send(mainBusiness);
 				  });
-				
-				}).catch(e => {
-				  console.log(e);
-		});
-	})
+					
+					}).catch(e => {
+					  console.log(e);
+			});
+
+})
+
+
 
 module.exports = yelpRouter
